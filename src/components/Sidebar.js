@@ -39,20 +39,22 @@ function Sidebar() {
             <CreateIcon />
         </SidebarHeader>
 
-        <SidebarOption Icon={InsertCommentIcon} title='Threads' />
-        <SidebarOption Icon={InboxIcon} title='Metions & reactions' />
-        <SidebarOption Icon={DraftsIcon} title='Saved items' />
-        <SidebarOption Icon={BookmarkBorderIcon} title='Channel browser' />   
-        <SidebarOption Icon={PeopleAltIcon} title='People & user groups' />
-        <SidebarOption Icon={AppsIcon} title='Apps' />
-        <SidebarOption Icon={FileCopyIcon} title='File browser' />
-        <SidebarOption Icon={ExpandLessIcon} title='Show less' />
-        <hr />
-        <SidebarOption Icon={ExpandMoreIcon} title='Channels' />
-        <hr />
-        <SidebarOption Icon={AddIcon} addChannelOption title='Add Channel' />
+        <SidebarOptions>
+            <SidebarOption Icon={InsertCommentIcon} title='Threads' />
+            <SidebarOption Icon={InboxIcon} title='Metions & reactions' />
+            <SidebarOption Icon={DraftsIcon} title='Saved items' />
+            <SidebarOption Icon={BookmarkBorderIcon} title='Channel browser' />   
+            <SidebarOption Icon={PeopleAltIcon} title='People & user groups' />
+            <SidebarOption Icon={AppsIcon} title='Apps' />
+            <SidebarOption Icon={FileCopyIcon} title='File browser' />
+            <SidebarOption Icon={ExpandLessIcon} title='Show less' />
+            <hr />
+            <SidebarOption Icon={ExpandMoreIcon} title='Channels' />
+            <hr />
+            <SidebarOption Icon={AddIcon} addChannelOption title='Add Channel' />
 
-        {channels?.docs.map((doc) => (<SidebarOption key={doc.id} id={doc.id} title={doc.data().name}/>))}
+            {channels?.docs.map((doc) => (<SidebarOption key={doc.id} id={doc.id} title={doc.data().name}/>))}
+        </SidebarOptions>
         
     </SidebarContanier>
 
@@ -75,6 +77,10 @@ const SidebarContanier = styled.div`
         margin-bottom: 10px;
         border: 1px solid #49274b;
     }
+`;
+
+const SidebarOptions = styled.div`
+    overflow: auto;
 `;
 
 const SidebarHeader = styled.div`
