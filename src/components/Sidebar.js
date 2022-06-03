@@ -71,16 +71,17 @@ const SidebarContanier = styled.div`
     margin-top: 60px;
     max-width: 260px;
     border-top: 1px solid #49274b;
+`;
+
+const SidebarOptions = styled.div`
+    overflow: scroll;
+    height: 89%;
 
     > hr {
         margin-top: 10px;
         margin-bottom: 10px;
         border: 1px solid #49274b;
     }
-`;
-
-const SidebarOptions = styled.div`
-    overflow: auto;
 `;
 
 const SidebarHeader = styled.div`
