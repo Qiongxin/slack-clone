@@ -17,7 +17,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SidebarOption from './SidebarOption';
 import AddIcon from '@material-ui/icons/Add';
 import { useAuthState } from 'react-firebase-hooks/auth';
-
+import { NavLink } from 'react-router-dom';
 
 
 function Sidebar() {
@@ -45,7 +45,7 @@ function Sidebar() {
             <SidebarOption Icon={DraftsIcon} title='Saved items' />
             <SidebarOption Icon={BookmarkBorderIcon} title='Channel browser' />   
             <SidebarOption Icon={PeopleAltIcon} title='People & user groups' />
-            <SidebarOption Icon={AppsIcon} title='Apps' />
+            <StyledNavLink to="/apps"><SidebarOption Icon={AppsIcon} title='Apps' /></StyledNavLink>
             <SidebarOption Icon={FileCopyIcon} title='File browser' />
             <SidebarOption Icon={ExpandLessIcon} title='Show less' />
             <hr />
@@ -53,7 +53,7 @@ function Sidebar() {
             <hr />
             <SidebarOption Icon={AddIcon} addChannelOption title='Add Channel' />
 
-            {channels?.docs.map((doc) => (<SidebarOption key={doc.id} id={doc.id} title={doc.data().name}/>))}
+            <StyledNavLink to="/chat">{channels?.docs.map((doc) => (<SidebarOption key={doc.id} id={doc.id} title={doc.data().name}/>))}</StyledNavLink>
         </SidebarOptions>
         
     </SidebarContanier>
@@ -71,6 +71,7 @@ const SidebarContanier = styled.div`
     margin-top: 60px;
     max-width: 260px;
     border-top: 1px solid #49274b;
+
 `;
 
 const SidebarOptions = styled.div`
@@ -82,6 +83,11 @@ const SidebarOptions = styled.div`
         margin-bottom: 10px;
         border: 1px solid #49274b;
     }
+`;
+
+const StyledNavLink = styled(NavLink)`
+    color: white;
+    text-decoration: none;
 `;
 
 const SidebarHeader = styled.div`

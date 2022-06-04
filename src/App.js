@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import styled from 'styled-components';
 import Chat from './components/Chat';
+import Apps from './components/Apps';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Login from './components/Login';
 import { auth } from './firebase';
@@ -42,7 +43,8 @@ function App() {
           
             <Sidebar />
               <Routes>
-                <Route path='/' element={<Chat/>}/>
+                <Route path='chat' element={<Chat/>}/>
+                <Route path='apps' element={<Apps/>}/>
               </Routes>
           </AppBody>
         </>
