@@ -3,6 +3,10 @@ import styled from 'styled-components'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import SearchIcon from '@material-ui/icons/Search';
 import FilterListRoundedIcon from '@material-ui/icons/FilterListRounded';
+import zoom from '../images/zoom.png';
+import github from '../images/github.png';
+import gmail from '../images/gmail.png';
+import googleDrive from '../images/google-drive.png';
 
 
 function Apps() {
@@ -23,7 +27,32 @@ function Apps() {
             </AppTitle>
             <AppIcons>
                 <AppIcon>
-                    <img src="../images/zoom.png" alt="zoom" />
+                    <img src={zoom} alt="zoom" />
+                    <span>
+                        <h3>Zoom</h3>
+                        <p>Easily start a zoom video meeting on Slack.</p>
+                    </span>
+                </AppIcon>
+                <AppIcon>
+                    <img src={github} alt="github" />
+                    <span>
+                        <h3>Github</h3>
+                        <p>Get more updates from the world's leading development platform within Slack.</p>
+                    </span>
+                </AppIcon>
+                <AppIcon>
+                    <img src={gmail} alt="gmail" />
+                    <span>
+                        <h3>Slack for Gmail</h3>
+                        <p>Send emails into Slack to discuss them with your teammates.</p>
+                    </span>
+                </AppIcon>
+                <AppIcon>
+                    <img src={googleDrive} alt="google drive" />
+                    <span>
+                        <h3>Google Drive</h3>
+                        <p>Get notifications about Google Drive files on Slack.</p>
+                    </span>
                 </AppIcon>
             </AppIcons>
 
@@ -62,7 +91,7 @@ const AppSearch = styled.div`
     align-items: center;
     border-radius: 6px;
     padding: 5px 8px;
-    color: grey;
+    color: gray;
     border: 1px solid lightgray;
 
     > input {
@@ -90,6 +119,31 @@ const AppTitle = styled.div`
     }
 `;
 
-const AppIcons = styled.div``;
+const AppIcons = styled.div`
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+`;
 
-const AppIcon = styled.div``;
+const AppIcon = styled.div`
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 49%;
+    margin-bottom: 15px;
+
+    > img {
+        width: 60px;
+        margin: 20px;
+    }
+
+    > span {
+        margin-right: 18px;
+    }
+
+    > span > p {
+        color: gray;
+        margin-top: 8px;
+    }
+`;
