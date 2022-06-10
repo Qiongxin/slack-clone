@@ -80,8 +80,8 @@ const HeaderSearch = styled.div`
   text-align: center;
   background-color: #421f44;
   padding: 0 50px;
-  color: grey;
-  border: 1px grey solid;
+  color: gray;
+  border: 1px gray solid;
 
   > input {
     outline: none;
@@ -89,7 +89,7 @@ const HeaderSearch = styled.div`
     color: white;
     border: none;
     text-align: center;
-    min-width: 30vm;
+    min-width: 30vw;
   }
 `;
 
